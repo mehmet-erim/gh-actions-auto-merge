@@ -22,3 +22,4 @@ jobs:
           title: Merge branch dev with rel-4.1
           body: This PR generated automatically to merge dev into rel.
           reviewers: ${{github.actor}}
+          token: ${{ github.token }}
