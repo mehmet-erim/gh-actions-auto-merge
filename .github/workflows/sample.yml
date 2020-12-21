@@ -7,5 +7,4 @@ jobs:
   sample-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, $GITLAB_USER_LOGIN!"
-      - run: echo $GITHUB_RUN_ID $GITHUB_HEAD_REF
+      - run: echo "Hello, GITHUB_RUN_NUMBER = $GITHUB_RUN_NUMBER , GITHUB_RUN_ID = $GITHUB_RUN_ID , GITHUB_ACTOR = $GITHUB_ACTOR , GITHUB_REPOSITORY = $GITHUB_REPOSITORY , GITHUB_REF = $GITHUB_REF , GITHUB_HEAD_REF = $GITHUB_HEAD_REF , GITHUB_BASE_REF = $GITHUB_BASE_REF"
