@@ -1,4 +1,7 @@
-name: Merge branch dev into rel-*
+name: Sample job
+on: 
+  push:
+    - dev
 jobs:
   sample-job:
     runs-on: ubuntu-latest
