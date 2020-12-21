@@ -13,7 +13,7 @@ jobs:
       - name: Reset promotion branch
         run: |
           git fetch origin $GITHUB_REF:$GITHUB_REF
-          git pull $GITHUB_REF
+          git pull origin rel-3.3
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
