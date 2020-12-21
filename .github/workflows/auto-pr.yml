@@ -7,14 +7,9 @@ jobs:
   updateAuthors:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Merge rel-4.1 with main
-        run: |
-          git log --format='%aN <%aE>%n%cN <%cE>' | sort -u > AUTHORS
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: Merge rel-4.1 with main
-          title: Merge rel-4.1 with main
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: Merge rel-4.1 with main
+        title: Merge rel-4.1 with main
+        reviewers:
+          - mehmet-erim
