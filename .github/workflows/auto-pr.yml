@@ -4,7 +4,7 @@ on:
     branches:
       - rel-4.1
 jobs:
-  auto-pr-sync-dev-with-rel-*:
+  auto-pr-sync-dev-with-rel:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
