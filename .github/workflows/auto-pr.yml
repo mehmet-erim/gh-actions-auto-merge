@@ -18,7 +18,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: ${{github.head_ref}}-auto-pr-${{github.run_id}}
+          branch: ${{github.head_ref}}-auto-pr-${{github.run_number}}
           title: Merge branch dev with ${{github.ref}}
           body: This PR generated automatically to merge dev into rel.
           reviewers: ${{github.actor}}
