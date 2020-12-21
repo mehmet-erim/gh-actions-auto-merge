@@ -1,4 +1,4 @@
-name: Merge branch dev into rel-*
+name: Merge branch dev with rel-4.1
 on:
   push:
     branches:
@@ -12,10 +12,13 @@ jobs:
           ref: dev
       - name: Reset promotion branch
         run: |
+          echo $GITHUB_REF
           git fetch origin rel-4.1:rel-4.1
           git reset --hard rel-4.1
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: dev-promotion
+          branch: production-promotion
+          title: Merge branch dev with rel-4.1
+          body: This PR generated automatically to merge dev into rel.
           token: ${{ github.token }}
