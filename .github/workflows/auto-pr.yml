@@ -21,3 +21,4 @@ jobs:
           branch: production-promotion
           title: Merge branch dev with rel-4.1
           body: This PR generated automatically to merge dev into rel.
+          token: ${{ github.token }}
