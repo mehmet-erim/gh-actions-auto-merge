@@ -1,11 +1,10 @@
 name: Sample job
-on: 
+on:
   push:
     - dev
 jobs:
   sample-job:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        echo "Hello, $GITLAB_USER_LOGIN!"
-        echo $GITHUB_RUN_ID $GITHUB_HEAD_REF
+      - run: echo "Hello, $GITLAB_USER_LOGIN!"
+      - run: echo $GITHUB_RUN_ID $GITHUB_HEAD_REF
