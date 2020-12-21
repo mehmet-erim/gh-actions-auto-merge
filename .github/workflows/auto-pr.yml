@@ -12,7 +12,6 @@ jobs:
           ref: dev
       - name: Reset promotion branch
         run: |
-          echo $GITHUB_REF
           git fetch origin $GITHUB_REF:$GITHUB_REF
           git reset --hard $GITHUB_REF
       - name: Create Pull Request
