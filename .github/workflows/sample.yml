@@ -1,0 +1,8 @@
+name: Merge branch dev into rel-*
+jobs:
+  sample-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        echo "Hello, $GITLAB_USER_LOGIN!"
+        echo $GITHUB_RUN_ID $GITHUB_HEAD_REF
