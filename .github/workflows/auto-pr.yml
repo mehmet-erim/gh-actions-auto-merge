@@ -1,8 +1,8 @@
-name: Merge branch dev with rel-4.1
+name: Merge branch dev with rel-*
 on:
   push:
     branches:
-      - rel-4.1
+      - rel-*
 jobs:
   auto-pr-sync-dev-with-rel:
     runs-on: ubuntu-latest
@@ -13,13 +13,13 @@ jobs:
       - name: Reset promotion branch
         run: |
           echo $GITHUB_REF
-          git fetch origin rel-4.1:rel-4.1
-          git reset --hard rel-4.1
+          git fetch origin $GITHUB_REF:$GITHUB_REF
+          git reset --hard $GITHUB_REF
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: ${{github.ref}}-auto-pr
-          title: Merge branch dev with rel-4.1
+          branch: ${{github.ref}}-auto-pr-${{github.run_number}}
+          title: Merge branch dev with ${{github.ref}}
           body: This PR generated automatically to merge dev into rel.
           reviewers: ${{github.actor}}
           token: ${{ github.token }}
