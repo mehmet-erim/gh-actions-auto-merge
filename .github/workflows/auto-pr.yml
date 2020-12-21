@@ -20,6 +20,6 @@ jobs:
         with:
           branch: ${{github.ref}}-auto-pr-${{github.run_number}}
           title: Merge branch dev with ${{github.ref}}
-          body: This PR generated automatically to merge dev into rel.
+          body: This PR generated automatically to merge dev wit ${{github.ref}}.
           reviewers: ${{github.actor}}
           token: ${{ github.token }}
